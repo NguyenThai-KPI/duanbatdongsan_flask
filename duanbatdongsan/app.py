@@ -78,7 +78,7 @@ thong_tin_chi_tiet = {
         'san_pham': [
             {'ten': 'Căn hộ 2 Phòng Ngủ', 'dien_tich': '68m2', 'gia': 'Từ 3.2 Tỷ', 'anh': 'can-ho-2phong.jpeg'},
             {'ten': 'Căn hộ 3 Phòng Ngủ', 'dien_tich': '90m2', 'gia': 'Từ 4.5 Tỷ', 'anh': 'can-ho-3phong.jpg'},
-            {'ten': 'Shophouse Khối Đế', 'dien_tich': '120m2', 'gia': 'Từ 15 Tỷ', 'anh': 'thap-bieutuong.jfif'}
+            {'ten': 'Shophouse Khối Đế', 'dien_tich': '120m2', 'gia': 'Từ 14 Tỷ', 'anh': 'thap-bieutuong.jfif'}
         ]
     }
 }
