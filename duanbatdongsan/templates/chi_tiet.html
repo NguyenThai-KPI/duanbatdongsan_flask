@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aria Bay - Tinh Hoa Kiến Trúc Vịnh Di Sản</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/logo-aria.png') }}" type="image/png">
+   <script>
+        !function(w,d,e,s,t){w.za=w.za||function(){(w.za.q=w.za.q||[]).push(arguments)};t=d.createElement(e);t.async=!0;t.src=s;s=d.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://h5.zdn.vn/pixel/js/za.js');
+
+        /* Khởi tạo Pixel với ID của bạn */
+        zmpixel('init', '7441755775057428480');
+
+        /* Theo dõi mặc định: Khách truy cập trang */
+        zmpixel('track', 'PageView');
+    </script>
+
+    <meta property="og:title" content="Aria Bay - Tinh Hoa Kiến Trúc Vịnh Di Sản">
+    <meta property="og:description" content="Tòa tháp biểu tượng tại Marina Bayfront District. Sở hữu tầm nhìn Panorama bao trọn Vịnh Hạ Long cùng hệ sinh thái tiện ích 5 sao đặc quyền.">
+    <meta property="og:image" content="https://tên-link-vercel-của-bạn.vercel.app/banner-link.jpg">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400&family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+
+   <style>
+       html { scroll-behavior: smooth; }
+
+       html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+       body {
+        overflow-x: hidden;
+    }
+        {
+        box-sizing: border-box;
+    }
+        /* --- TẦNG 0: CÀI ĐẶT CHUNG --- */
+        /* --- MỚI: TỔNG QUAN VỊ TRÍ (BẢN ĐỒ LỚN - CÁC HỘP VĂN BẢN XUNG QUANH) --- */
+        /* --- SỬA LẠI: TỔNG QUAN VỊ TRÍ (BẢN ĐỒ TRỐNG - MÔ TẢ Ở DƯỚI) --- */
+        section.overview-section[id="vi-tri"] {
+            background-color: #f7f3ed; /* Màu nền kem sang trọng, không trùng nền web */
+            padding: 90px 20px; /* Tăng mạnh khoảng cách trên và dưới cho thoáng đãng, không bị hẹp */
+        }
+
+        .section-title-wrapper {
+            max-width: 800px;
+            margin: 0 auto 60px auto;
+            text-align: center;
+        }
+
+        .main-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.8rem;
+            color: #3e2129; /* Tiêu đề màu đỏ đô quyền lực của dự án */
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .intro-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555; /* Chữ dẫn sang Xám đậm cho dễ đọc */
+            text-align: center;
+        }
+
+        .map-layout-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            flex-direction: column; /* Xếp dọc: Bản đồ trên, Mô tả dưới */
+            gap: 40px; /* Khoảng cách giữa bản đồ và danh sách */
+        }
+
+        /* Cột bên trên: Bản đồ sơ đồ vị trí lớn hơn */
+        .map-full-container {
+            width: 100%;
+            border-radius: 8px; /* Bo góc ảnh nhẹ nhàng cho đẹp mắt */
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Đổ bóng nhẹ nhàng */
+        }
+
+        .map-full-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: none;
+            outline: none;
+        }
+
+        /* Cột bên dưới: Danh sách mô tả */
+        .location-description-container {
+            width: 100%;
+            background-color: #ffffff; /* Nền trắng nổi bật trên nền kem */
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2); /* Đổ bóng nổi khối 3D */
+            color: #333333;
+            text-align: left;
+        }
+
+        .description-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.7rem;
+            color: #3e2129; /* Tiêu đề màu đỏ đô */
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .description-list {
+            list-style-type: none;
+        }
+
+        .description-list li {
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: #555;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .list-icon { font-size: 1.5rem; color: #d4af37; } /* Ví dụ biểu tượng Vàng Rồng */
+                /* --- THANH ĐIỀU HƯỚNG (MENU NAV) --- */
+        .navbar {
+            position: fixed; top: 0; left: 0; width: 100%;
+            background-color: #e6d8c8; padding: 0px 00px;
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .logo-wrapper { display: flex; align-items: center; text-decoration: none; }
+        .nav-logo-image { height: 75px; width: auto; object-fit: contain; transition: transform 0.3s ease; }
+        .nav-logo-image:hover { transform: scale(1.05); }
+
+        .nav-links { display: flex; gap: 35px; align-items: center; }
+        .nav-links a {
+            text-decoration: none; color: #333333; font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem; font-weight: 300; text-transform: uppercase; transition: color 0.3s;
+        }
+        .nav-links a:hover { color: #8c6d23; }
+
+        .nav-links a.zalo-menu-btn {
+            background-color: #0068ff; color: #ffffff !important;
+            padding: 6px 16px; border-radius: 25px; margin-left: 15px;
+            box-shadow: 0 4px 10px rgba(0, 104, 255, 0.3);
+            display: flex; align-items: center;
+        }
+        .nav-links a.zalo-menu-btn:hover { background-color: #0054cc; transform: translateY(-2px); }
+
+        /* [QUAN TRỌNG] ẨN NÚT ZALO NHỎ VÀ NÚT 3 GẠCH TRÊN MÁY TÍNH */
+        .mobile-zalo-btn { display: none; }
+        .menu-toggle { display: none; font-size: 1.8rem; cursor: pointer; color: #333333; }
+
+        /* --- MÀN HÌNH CHÀO (SPLASH SCREEN) --- */
+        .splash-screen { position: relative; height: 100vh; overflow: hidden; }
+        .splash-bg {
+            position: absolute; top: -15vh; left: 0; width: 100%; height: 130vh;
+            background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url("{{ url_for('static', filename='images/aria-back1.avif') }}");
+            background-size: cover; background-position: center; z-index: -1;
+        }
+        .splash-content {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 1;
+        }
+        .splash-logo { text-align: center; }
+        .logo-text { font-family: 'Oswald', sans-serif; font-size: 4rem; color: #ffffff; letter-spacing: 6px; font-weight: 500; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+        .scroll-icon { position: absolute; bottom: 40px; color: #ffffff; font-size: 3rem; animation: bounce 2s infinite; text-shadow: 0 0 10px rgba(0,0,0,0.5); }
+        @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-15px); } 60% { transform: translateY(-7px); } }
+
+
+
+        /* --- TẦNG 1: HERO BANNER --- */
+        .hero {
+            height: 100vh; background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url("{{ url_for('static', filename='images/' + du_an.anh_nen) }}");
+            background-size: cover; background-position: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px;
+        }
+        .hero-subtitle { font-size: 1.1rem; letter-spacing: 6px; color: #ffffff; margin-bottom: 15px; font-weight: 400; }
+        .hero-title { font-family: 'Oswald', sans-serif; font-size: 4.5rem; font-weight: 400; color: #ffffff;  margin-bottom: 5px; letter-spacing: 2px; text-transform: uppercase; }
+        .hero-desc { font-size: 1.2rem; font-weight: 300; letter-spacing: 6px; color: #cccccc; text-transform: uppercase; margin-bottom: 30px; }
+        .hero-intro-text { font-family: 'Montserrat', sans-serif; font-size: 1.0rem; line-height: 1.9; max-width: 900px; font-weight: 350; color: #ffffff; letter-spacing: 0.5px; }
+
+        /* --- PHẦN MỚI 1, 2, 3: VỊ TRÍ, QUOTE, THỐNG KÊ --- */
+        .location-section { background-image: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 100%), url("{{ url_for('static', filename='images/vitri-ngoi.jfif') }}"); background-size: cover; background-position: center; background-attachment: fixed; padding: 120px 20px; }
+        .location-content { max-width: 1200px; margin: auto; }
+        .location-content h2 { font-size: 3rem; font-weight: 300;color: #ffffff; margin-bottom: 20px; text-transform: uppercase; }
+        .location-content p { font-size: 1.1rem; line-height: 1.8; max-width: 600px; color: #e0e0e0; margin-bottom: 15px; }
+        .quote-section { display: flex; background-color: #121212; }
+        .quote-image { flex: 6; min-height: 500px; background-image: url("{{ url_for('static', filename='images/thap-bieutuong.jfif') }}"); background-size: cover; background-position: center; }
+        .quote-box { flex: 4; background-color: #4a252f; padding: 80px 60px; display: flex; align-items: center; justify-content: center; }
+        .quote-text { font-size: 1.2rem; line-height: 1.8; font-style: italic; color: #ecdfb5; position: relative; }
+        .quote-text::before { content: "“"; font-size: 5rem; color: rgba(255,255,255,0.1); position: absolute; top: -40px; left: -20px; font-family: serif; }
+        .stats-section { background-color: #e6d8c8; padding: 100px 20px; color: #333333; text-align: center; }
+        .stats-header { max-width: 800px; margin: 0 auto 60px auto; }
+        .stats-header h2 { font-size: 2.2rem; font-weight: 500; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+        .stats-header p { font-size: 1.1rem; line-height: 1.6; color: #555; }
+        .stats-grid { max-width: 1000px; margin: auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; row-gap: 60px; }
+        .stat-item h3 { font-size: 1.8rem; font-weight: 400; color: #222; margin-bottom: 5px; }
+        .stat-item p { font-size: 0.9rem; color: #666; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* --- TẦNG 2, 3, 4: KIẾN TRÚC, OVERVIEW, TIỆN ÍCH, LIÊN HỆ --- */
+        .about-section { background-color: #6b5d53bb; padding: 100px 20px; }
+        .about-container { max-width: 1200px; margin: auto; display: flex; align-items: center; gap: 60px; }
+        .about-text { flex: 1; } .about-image { flex: 1; }
+        .about-image img { width: 100%; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
+        .section-title { color: #ffffff; font-size: 2.5rem; margin-bottom: 20px; font-weight: 300; text-transform: uppercase;}
+        .section-desc { font-size: 1.1rem; line-height: 1.8; color: #cccccc; margin-bottom: 30px; }
+        .feature-list { list-style-type: none; }
+        .feature-list li { font-size: 1.1rem; color: #ffffff; margin-bottom: 15px; padding-left: 20px; border-left: 3px solid #d4af37; }
+        .overview-section { background-color: #0b0b0b; padding: 0; }
+        .overview-container { position: relative; width: 100%; margin: 0; }
+        .overview-container img { width: 100%; display: block; border: none; outline: none; }
+        .floating-text { position: absolute; color: #ffffff; text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9); font-size: 1.05rem; line-height: 1.5; }
+        .floating-text h4 { font-family: 'Oswald', sans-serif; font-size: 1.4rem; font-weight: 500; color: #ffffff; margin-bottom: 5px; letter-spacing: 1px; }
+        .text-1 { top: 10%; right: 20%; } .text-2 { top: 30%; left: 30%; } .text-3 { bottom: 37%; right: 15%; text-align: right; } .text-4 { bottom: 22%; left: 55%; }
+        .text-1 h4 { color: #1f1f1fdb; } .text-1 p { color: #1f1f1fdb; }
+        .amenities-section { padding: 100px 20px; background-color: #4a252f; }
+        .amenities-container { max-width: 1200px; margin: auto; }
+        .amenities-header { text-align: center; margin-bottom: 60px; }
+        .amenities-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .amenity-card { background-color: #1a1a1a; border-radius: 8px; overflow: hidden; transition: transform 0.3s ease; border-bottom: 3px solid #d4af37; }
+        .amenity-card:hover { transform: translateY(-10px); }
+        .amenity-image { width: 100%; height: 250px; object-fit: cover; }
+        .amenity-content { padding: 25px; }
+        .amenity-title { color: #ffffff; font-size: 1.5rem; margin-bottom: 10px; font-weight: 400; }
+        .amenity-desc { color: #a0a0a0; font-size: 0.95rem; line-height: 1.6; }
+        /* --- MỚI: LIÊN HỆ (BỐ CỤC 2 CỘT) --- */
+        .contact-section {
+            background-color: #ffffffcf; /* Đổi nền sang be sáng cho đồng bộ và sạch sẽ */
+            padding: 100px 20px;
+            color: #333333;
+        }
+
+        .contact-layout {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 60px;
+            align-items: center; /* Căn giữa 2 cột theo chiều dọc */
+        }
+
+        .contact-info { flex: 1; text-align: left; }
+        .contact-info h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.8rem;
+            color: #3e2129; /* Tiêu đề màu đỏ đô */
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        .contact-info p { font-size: 1.05rem; line-height: 1.8; color: #555; margin-bottom: 25px; text-align: justify;}
+        .contact-info ul { list-style-type: none; }
+        .contact-info ul li { margin-bottom: 15px; font-size: 1.05rem; position: relative; padding-left: 20px; line-height: 1.6;}
+        /* --- HIỆU ỨNG DI CHUỘT CHO CÁC ĐƯỜNG LINK TRONG PHẦN LIÊN HỆ --- */
+        .contact-info ul li a {
+            transition: all 0.3s ease; /* Tạo hiệu ứng chuyển màu từ từ, mượt mà (không bị chớp giật) */
+        }
+
+        .contact-info ul li a:hover {
+            color: #d4af37 !important; /* [QUAN TRỌNG] Dùng !important để "đánh bại" màu gốc, ép nó chuyển sang màu Vàng Rồng */
+            text-decoration: underline !important; /* Thêm gạch chân khi di chuột để khách biết đây là link có thể bấm được */
+        }
+        .contact-info ul li::before { content: "•"; position: absolute; left: 0; color: #000000; font-size: 1.5rem; top: -5px;}
+        .contact-info ul li strong { color: #222; }
+
+        .contact-form-wrapper {
+            flex: 1;
+            background: linear-gradient(135deg, #4a252f 0%, #3e2129 100%); /* Màu nền đỏ đô sang trọng giống mẫu */
+            padding: 50px 40px;
+            border-radius: 12px; /* Bo góc to hơn cho mềm mại */
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2); /* Đổ bóng nổi khối 3D */
+            color: #ffffff;
+            text-align: center;
+            width: 100%;
+        }
+        .contact-form-wrapper h3 { font-family: 'Oswald', sans-serif; font-size: 1.8rem; margin-bottom: 10px; letter-spacing: 1px;}
+        .contact-form-wrapper p { font-size: 0.95rem; color: #e0e0e0; margin-bottom: 30px; line-height: 1.6;}
+
+        .form-input {
+            width: 100%; padding: 15px; margin-bottom: 20px;
+            background-color: #ffffff; /* Ô nhập liệu màu trắng dễ nhìn */
+            border: 1px solid #ccc;
+            color: #333333; font-size: 1rem; border-radius: 6px; outline: none;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            box-sizing: border-box;
+        }
+        .form-input:focus { border-color: #cfb253; box-shadow: 0 0 8px rgba(212, 175, 55, 0.5); }
+        .submit-btn {
+            width: 100%; padding: 15px; background-color: #d4af37; color: #ffffff;
+            font-size: 1.1rem; font-weight: bold; border: none; border-radius: 6px;
+            cursor: pointer; text-transform: uppercase; transition: all 0.3s ease;
+            font-family: 'Oswald', sans-serif; letter-spacing: 1px;
+        }
+        .submit-btn:hover { background-color: #b5952f; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.3);}        .submit-btn:hover { background-color: #b5952f; }
+        footer { background-color: #3e2129; padding: 40px 20px; text-align: center; border-top: 1px solid #222; }
+        .footer-logo { color: #d4af37; font-size: 1.8rem; font-weight: 300; margin-bottom: 15px; letter-spacing: 2px; font-family: 'Oswald', sans-serif; }
+        .footer-text { color: #888; font-size: 0.9rem; line-height: 1.8; }
+        .footer-text a { color: #d4af37; text-decoration: none; }
+        /* --- [MỚI] CSS CHO POPUP HIỆN LÊN --- */
+        /* --- [SỬA LẠI] POPUP FORM LIÊN HỆ (THIẾT KẾ MỚI THEO MẪU) --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Màn đen mờ phủ lên toàn web */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; /* Đảm bảo nó nổi lên trên cùng mọi thứ */
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+        }
+
+        /* Class này được bật lên bằng JS để hiện Popup */
+        .modal-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background-color: #ffffff; /* Nền trắng sạch sẽ theo mẫu */
+            width: 90%;
+            max-width: 420px; /* Độ rộng tối đa gọn gàng hơn */
+            border-radius: 12px;
+            position: relative;
+            text-align: center;
+            color: #333333;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+            transform: translateY(-30px) scale(0.95); /* Hiệu ứng nảy từ trên xuống */
+            transition: all 0.4s ease;
+            overflow: hidden; /* Để bo góc cho ảnh ở trên */
+            padding: 0; /* Xóa padding cũ */
+        }
+
+        .modal-overlay.show .modal-content {
+            transform: translateY(0) scale(1);
+        }
+
+        /* Nút dấu X thần thánh */
+        .close-btn {
+            position: absolute;
+            top: 10px; right: 15px;
+            font-size: 2.2rem; /* Giảm kích thước một chút cho tinh tế */
+            color: #d4af37; /* Vì nằm trên ảnh tối */
+            cursor: pointer;
+            transition: color 0.3s;
+            line-height: 1;
+            z-index: 100; /* Nổi trên logo overlay */
+        }
+        .close-btn:hover { color: #d4af37; }
+
+        /* Cấu trúc ảnh tháp và logo */
+        .popup-image-wrapper {
+            position: relative;
+            width: 100%;
+            height: auto;
+        }
+
+        .popup-hero-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+
+        /* Lớp phủ logo ARIA BAY trên ảnh */
+        .popup-logo-overlay {
+            position: absolute;
+            bottom: 15px; left: 20px;
+            color: #ffffff;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.9;
+        }
+
+        /* Cấu trúc phần nội dung văn bản và form */
+        .popup-text-form-wrapper {
+            padding: 30px; /* Padding chỉ dành cho phần nội dung */
+        }
+
+        .popup-offer-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.6rem;
+            color: #3e2129; /* Tiêu đề màu nâu đen */
+            margin-bottom: 10px;
+            line-height: 1.3;
+            text-transform: none; /* Không viết hoa toàn bộ */
+        }
+
+        .popup-offer-desc {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            color: #777; /* Chữ xám */
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        /* Chỉnh lại kiểu dáng cho ô input trong popup cho gọn và nhạt hơn form cũ */
+        .popup-form .form-input {
+            width: 100%; padding: 12px; margin-bottom: 15px;
+            background-color: #fff;
+            border: 1px solid #ddd; /* Đường viền mỏng, nhạt */
+            border-radius: 6px;
+            color: #333; font-size: 0.95rem; outline: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .popup-form .form-input:focus { border-color: #cfb253; box-shadow: 0 0 8px rgba(212, 175, 55, 0.5); }
+        .popup-form .form-input::placeholder { color: #aaaaaa; } /* Placeholder xám nhạt */
+
+        /* Nút bấm GỬI THÔNG TIN màu Vàng Rồng */
+        .popup-form .submit-btn {
+            width: 100%; padding: 12px;
+            background-color: #d4af37; color: #ffffff;
+            font-size: 1.0rem; font-weight: bold; border: none; border-radius: 6px;
+            cursor: pointer; text-transform: uppercase; transition: all 0.3s ease;
+            font-family: 'Oswald', sans-serif; letter-spacing: 1px;
+        }
+        .popup-form .submit-btn:hover { background-color: #b5952f; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.3);}
+        /* --- [MỚI] CSS CHO KHUNG CHAT HỖ TRỢ --- */
+        .live-chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            background-color: #ffffff;
+            border-radius: 8px 8px 0 0;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+            z-index: 9998; /* Nổi lên trên nhưng dưới Popup */
+            font-family: 'Montserrat', sans-serif;
+            overflow: hidden;
+            border: 1px solid #dcdcdc;
+        }
+
+        .chat-header {
+            background-color: #e6edf5; /* Màu xanh nhạt giống mẫu */
+            color: #1a365d;
+            padding: 10px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: bold;
+            border-bottom: 1px solid #c9d6e8;
+        }
+
+        .chat-header:hover { background-color: #d1dfee; }
+        .chat-title { font-size: 1rem; }
+        .chat-icon { font-size: 1.2rem; }
+
+        /* Mặc định nội dung chat sẽ hiển thị. Khi thêm class 'collapsed' vào JS sẽ bị ẩn đi */
+        .chat-content {
+            height: auto;
+            max-height: 400px;
+            transition: all 0.3s ease;
+        }
+
+        .chat-content.collapsed {
+            max-height: 0;
+            border: none;
+        }
+
+        .chat-profile {
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .chat-avatar {
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            object-fit: contain;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+        }
+
+        .chat-info { text-align: left; }
+        .chat-name { font-weight: bold; font-size: 0.95rem; color: #333; display: flex; align-items: center; gap: 5px;}
+        .online-dot { width: 8px; height: 8px; background-color: #28c76f; border-radius: 50%; display: inline-block; }
+        .chat-role { font-size: 0.8rem; color: #777; margin-top: 2px;}
+
+        .chat-message-area {
+            padding: 15px;
+            background-color: #f9f9f9;
+            min-height: 120px;
+        }
+
+        .chat-bubble {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            padding: 12px;
+            border-radius: 0 10px 10px 10px;
+            font-size: 0.9rem;
+            color: #333;
+            line-height: 1.5;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            text-align: left;
+        }
+
+        .chat-input-area {
+            display: flex;
+            border-top: 1px solid #eee;
+        }
+
+        .chat-input-area input {
+            flex: 1;
+            padding: 12px 10px;
+            border: none;
+            outline: none;
+            font-size: 0.9rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .chat-input-area button {
+            background-color: #ffffff;
+            border: none;
+            border-left: 1px solid #eee;
+            padding: 0 15px;
+            color: #1a365d;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .chat-input-area button:hover { background-color: #f0f0f0; }
+    </style>
+</head>
+<body>
+<header class="navbar">
+        <a href="chi_tiet.html" class="logo-wrapper">
+            <img src="{{ url_for('static', filename='images/logo-chinh.png') }}" alt="Aria Bay Logo" class="nav-logo-image">
+        </a>
+
+        <a href="https://zalo.me/0782145432" target="_blank" class="mobile-zalo-btn">Chat Zalo</a>
+
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+        <nav class="nav-links" id="mobileMenu">
+            <a href="/">TRANG CHỦ HỆ THỐNG</a>
+            <a href="#gioi-thieu">GIỚI THIỆU {{ du_an.ten | upper }}</a>
+            <a href="#tien-ich">TIỆN ÍCH</a>
+            <a href="#san-pham">SẢN PHẨM</a>
+            <a href="#lien-he">LIÊN HỆ</a>
+            <a href="https://zalo.me/0782145432" target="_blank" class="zalo-menu-btn">NHẬN TƯ VẤN QUA ZALO</a>
+        </nav>
+    </header>
+
+    <section class="splash-screen" id="trang-chu">
+        <div class="splash-bg" id="splashBg"></div>
+
+        <div class="splash-content">
+            <div class="splash-logo">
+                <div class="logo-text">{{ du_an.ten }}</div>
+            </div>
+            <div class="scroll-icon">
+                <span class="music-note">𝄞</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero" id="gioi-thieu">
+        <p class="hero-subtitle">VỊ TRÍ ĐỘC TÔN</p>
+        <h1 class="hero-title">{{ du_an.slogan }}</h1>
+        <p class="hero-desc">CHUẨN MỰC SỐNG MỚI</p>
+        <p class="hero-intro-text">Aria Bay – tòa tháp biểu tượng tại Marina Bayfront District được kiến tạo với thiết kế giật cấp độc đáo, nhìn từ xa như những phím đàn piano vươn cao trên nền trời. Kiến trúc khác biệt ấy biến mỗi tầng cao thành một phím nhạc, mỗi khung cửa thành một giai điệu, cùng hòa ca với biển trời di sản để tạo nên bản giao hưởng sống độc nhất vô nhị.</p>
+    </section>
+
+     <section class="quote-section">
+        <div class="quote-image"></div>
+        <div class="quote-box">
+            <p class="quote-text">Nếu Marina Bayfront District là sân khấu sống và giải trí mang chuẩn Front Row Life, thì tòa tháp biểu tượng ARIA BAY chính là "hàng ghế đầu" VVIP nhất – nơi tái hiện tinh thần Front Row View với tầm nhìn bao trọn Vịnh di sản, đồng thời thừa hưởng trọn vẹn hệ sinh thái của tổ hợp.</p>
+        </div>
+    </section>
+
+    <section class="location-section">
+        <div class="location-content">
+            <h2>VỊ TRÍ HÀNG GHẾ ĐẦU<br>VỊNH KỲ QUAN</h2>
+            <p>Aria Bay sở hữu vị trí điển hình của "hàng ghế đầu": một bước chạm cát, trước mặt là vịnh, bên cạnh là hồ, sau lưng là phố. Thiên nhiên và mặt nước bao bọc trọn vẹn.</p>
+            <p>Vịnh di sản như được thu gọn trong tầm mắt – tầm nhìn 360°, rộng mở và không bị che chắn. Trao cho chủ nhân đặc quyền mà không phải ai cũng có được.</p>
+        </div>
+    </section>
+
+
+    <section class="stats-section">
+        <div class="stats-header">
+            <h2>THÁP ĐÔI BIỂU TƯỢNG MANG ĐẾN ĐẶC QUYỀN SỐNG LIỀN KỀ VỊNH BIỂN</h2>
+            <p>Với vị trí "một bước chạm cát", cùng dấu ấn kiến trúc độc đáo nổi bật trên đường chân trời vịnh Hạ Long, Aria Bay bao gồm hai tòa tháp cao 40 tầng, là công trình biểu tượng của bán đảo 3 Halong Marina.</p>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>{{ du_an.quy_mo }}</h3>
+                <p>Quy mô dự án</p>
+            </div>
+            <div class="stat-item">
+                <h3>{{ du_an.tang }}</h3>
+                <p>Quy mô tầng</p>
+            </div>
+            <div class="stat-item">
+                <h3>{{ du_an.tong_can }}</h3>
+                <p>Tổng số căn</p>
+            </div>
+            <div class="stat-item">
+                <h3>72 SHOP KHỐI ĐẾ</h3>
+                <p>Khu thương mại</p>
+            </div>
+            <div class="stat-item">
+                <h3>65% CĂN STUDIO</h3>
+                <p>Tỷ lệ căn hộ</p>
+            </div>
+            <div class="stat-item">
+                <h3>8 SKY VILLA</h3>
+                <p>Phiên bản giới hạn</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-text">
+                <h2 class="section-title">THIẾT KẾ ĐỘC BẢN</h2>
+                <p class="section-desc">Lấy cảm hứng từ sự giao hòa giữa thiên nhiên và con người, dự án mang đến một không gian sống tinh tế. Không quá cầu kỳ, phô trương nhưng đủ để khẳng định vị thế của chủ nhân với thiết kế tối ưu hóa ánh sáng tự nhiên và luồng gió trời.</p>
+                <ul class="feature-list">
+                    <li>Tầm nhìn bao quát toàn cảnh thành phố</li>
+                    <li>Thiết kế mặt kính hộp Low-E cách nhiệt</li>
+                    <li>Không gian riêng tư tuyệt đối</li>
+                </ul>
+            </div>
+            <div class="about-image">
+                <img src="{{ url_for('static', filename='images/thietke-docban.jfif') }}" alt="Kiến trúc dự án">
+            </div>
+        </div>
+    </section>
+    <section class="overview-section">
+        <div class="overview-container">
+            <img src="{{ url_for('static', filename='images/tamnhin-aria.jpg') }}" alt="Tổng quan dự án">
+
+            <div class="floating-text text-1">
+                <h4>Tầm nhìn Panorama</h4>
+                <p>đắt giá hướng ra Vịnh Hạ Long</p>
+            </div>
+
+            <div class="floating-text text-2">
+                <h4>Trung tâm Marina Bayfront District</h4>
+                <p>Tâm điểm của trải nghiệm đẳng cấp và trọn vẹn</p>
+            </div>
+
+            <div class="floating-text text-3">
+                <h4>Hồ cảnh quan & Cầu biểu tượng</h4>
+                <p>Nằm liền kề ngay bên hông</p>
+            </div>
+
+            <div class="floating-text text-4">
+                <h4>Phố hiện đại</h4>
+                <p>Sầm uất ngay sau lưng dự án</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="overview-section" id="vi-tri">
+        <div class="section-title-wrapper">
+            <h2 class="main-title">TỔNG QUAN VỊ TRÍ</h2>
+            <p class="intro-text">
+                Aria Bay sở hữu vị trí đắc địa của "hàng ghế đầu", hòa mình vào thiên nhiên với tầm nhìn bao quát và thừa hưởng trọn vẹn hệ sinh thái của tổ hợp Marina Bayfront District.
+            </p>
+        </div>
+
+        <div class="map-layout-container">
+            <div class="map-full-container">
+                <img src="{{ url_for('static', filename='images/vitri-aria.webp') }}" alt="Sơ đồ vị trí dự án Aria Bay" class="map-full-image">
+            </div>
+
+            <div class="location-description-container">
+                <h3 class="description-title">ĐIỂM NHẤN VỊ TRÍ CỦA ARIA BAY HẠ LONG*</h3>
+                <ul class="description-list">
+                    <li>- Nằm ngay trung tâm bán đảo 3 – khu đất ven biển cuối cùng tại Halong Marina.</li>
+                    <li>- Trước mặt là vịnh, phía sau là trục đô thị, bên cạnh là hồ cảnh quan.</li>
+                    <li>- Kết nối trực tiếp đại lộ Hoàng Quốc Việt – trục phát triển du lịch Hạ Long.</li>
+                </ul>
+                <h3 class="description-title">Từ Aria Bay Hạ Long, cư dân có thể di chuyển nhanh đến các điểm trọng yếu:</h3>
+                <ul class="description-list">
+                    <li>- 100m đến Hạ Long Marine Plaza – trung tâm thương mại và giải trí lớn của khu vực.</li>
+                    <li>- 3km đến Sun World Hạ Long Park – tổ hợp vui chơi thu hút hàng triệu du khách mỗi năm.</li>
+                    <li>- 4km đến Tuần Châu – trung tâm sự kiện, du lịch và bến du thuyền quốc tế.</li>
+                    <li>- Liền kề khu nghỉ dưỡng cao cấp và khách sạn 5 sao như New World Hạ Long.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="amenities-section" id="tien-ich">
+        <div class="amenities-container">
+            <div class="amenities-header">
+                <p class="hero-subtitle">ĐẶC QUYỀN VƯỢT TRỘI</p>
+                <h2 class="section-title">HỆ SINH THÁI TIỆN ÍCH 5 SAO</h2>
+            </div>
+            <div class="amenities-grid">
+                {% for item in du_an.tien_ich %}
+                <div class="amenity-card">
+                    <img src="{{ url_for('static', filename='images/' + item.anh) }}" alt="{{ item.ten }}" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3 class="amenity-title">{{ item.ten }}</h3>
+                        <p class="amenity-desc">{{ item.mo_ta }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="amenities-section" id="san-pham" style="background-color: #f7f3ed;">
+        <div class="amenities-container">
+            <div class="amenities-header">
+                <p class="hero-subtitle" style="color: #d4af37">MẶT BẰNG & THIẾT KẾ</p>
+                <h2 class="section-title"style="color: #3e2129">SẢN PHẨM NỔI BẬT </h2>
+            </div>
+            <div class="amenities-grid">
+                {% for sp in du_an.san_pham %}
+                <div class="amenity-card">
+                    <img src="{{ url_for('static', filename='images/' + sp.anh) }}" alt="{{ sp.ten }}" class="amenity-image" style="height: 250px; object-fit: cover;">
+                    <div class="amenity-content">
+                        <h3 class="amenity-title" style="color: #d4af37;">{{ sp.ten }}</h3>
+                        <p class="amenity-desc"><strong>Diện tích:</strong> {{ sp.dien_tich }}</p>
+                        <p class="amenity-desc"><strong>Giá dự kiến:</strong> {{ sp.gia }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="lien-he">
+        <div class="contact-layout">
+            <div class="contact-info">
+                <h2>LIÊN HỆ TƯ VẤN</h2>
+                <p>Quý khách hàng cần tư vấn về dự án căn hộ Aria Bay, vui lòng liên hệ với em Tiến để được hỗ trợ thông tin mới nhất về mặt bằng, bảng giá, chính sách ưu đãi.</p>
+                <ul>
+                    <li><strong>Địa chỉ: </strong> Bán đảo 3 KĐT Hạ Long Marina, P. Bãi Cháy, TP. Hạ Long</li>
+                     <li><strong>Google Maps:</strong> <a href="https://maps.app.goo.gl/MjtQbbpCk8mfMnkj9"target="_blank" style="color: #be9d31; text-decoration: none;"> Aria Bay Tower Hạ Long</a></li>
+                    <li><strong>Website: </strong><a href="https://ariabay-website.vercel.app/"target="_blank" style="color: #be9d31; text-decoration: none;">https://ariabay-website.vercel.app/</a></li>
+                    <li><strong>Hotline: </strong> 0987.654.321</li>
+                    <li><strong>Email: </strong> thainguyen@gmail.com</li>
+                    <li><strong>Fanpage: </strong> <a href="https://www.facebook.com/nguyen.thai.217845" target="_blank">Thái Nguyễn</a>.</li>
+                </ul>
+            </div>
+
+            <div class="contact-form-wrapper">
+                <h3>Đăng kí ngay hôm nay để nhận chiết khấu lên đến 400tr</h3>
+                <p>Chính sách ưu đãi áp dụng từ tháng 4 đến 15/4 , đăng kí ngay để được tư vấn chi tiết!</p>
+                <form class="contact-form" action="/dang-ky" method="POST">
+                    <input type="text" name="Họ_Tên" class="form-input" placeholder="Họ tên của bạn *" minlength="2" required>
+                    <input type="tel" name="Số_Điện_Thoại" class="form-input" placeholder="Số điện thoại *" pattern="(0)[0-9]{9}" title="Vui lòng nhập đúng 10 chữ số, bắt đầu bằng số 0" required>
+                    <input type="email" name="Email_Khách" class="form-input" placeholder="Email (Không bắt buộc)">
+
+                    <input type="text" name="_honey" style="display:none">
+                    <input type="hidden" name="_captcha" value="true">
+                    <input type="hidden" name="Du_An_Quan_Tam" value="{{ du_an.ten }}">
+
+                    <button type="submit" class="submit-btn">GỬI THÔNG TIN</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo">ARIA BAY</div>
+        <p class="footer-text">
+            <strong>Địa chỉ:</strong> Bán đảo 3, Khu đô thị Vịnh biển Halong Marina, Quảng Ninh <br>
+            <strong>Hotline:</strong> 0987.654.321 | <strong>Email:</strong> thainguyen@gmail.com <br>
+            <strong>Facebook:</strong> Thái Nguyễn <br>
+            &copy; Một trang dự án được thiết kế bởi <a target="_blank">Nguyễn Thái</a>.
+        </p>
+    </footer>
+<script>
+        window.addEventListener('scroll', function() {
+            var cuonChuot = window.scrollY;
+            var anhNen = document.getElementById('splashBg');
+            var diChuyenY = -cuonChuot * 0.1;
+
+            anhNen.style.transform = 'translateY(' + diChuyenY + 'px)';
+        });
+    </script>
+    <script>
+        function toggleMenu() {
+            // Tắt/Bật class "show" để ẩn/hiện menu
+            document.getElementById("mobileMenu").classList.toggle("show");
+        }
+
+        // Tự động đóng menu sau khi khách đã bấm chọn 1 mục
+        var menuLinks = document.querySelectorAll(".nav-links a");
+        menuLinks.forEach(function(link) {
+            link.addEventListener("click", function() {
+                document.getElementById("mobileMenu").classList.remove("show");
+            });
+        });
+    </script>
+
+    <div id="autoPopup" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closePopup()">×</span>
+
+            <div class="popup-image-wrapper">
+                <img src="{{ url_for('static', filename='images/tamnhin-aria.jpg') }}" alt="Aria Bay Tower Hạ Long" class="popup-hero-image">
+                <div class="popup-logo-overlay">{{ du_an.ten }}</div>
+            </div>
+
+            <div class="popup-text-form-wrapper">
+                <h3 class="popup-offer-title">Chiết khấu lên đến 400 triệu</h3>
+                <p class="popup-offer-desc">Chính sách ưu đãi áp dụng từ tháng 4 đến 15/4 , đăng kí ngay</p>
+
+                <form class="contact-form popup-form" action="/dang-ky" method="POST">
+                    <input type="text" name="Họ_Tên" class="form-input" placeholder="Họ tên của bạn *" required>
+                    <input type="tel" name="Số_Điện_Thoại" class="form-input" placeholder="Số điện thoại *" pattern="(0)[0-9]{9}" title="Vui lòng nhập đúng 10 chữ số, bắt đầu bằng số 0" required>
+                    <input type="email" name="Email_Khách" class="form-input" placeholder="Email (Không bắt buộc)">
+
+                    <input type="text" name="_honey" style="display:none">
+                    <input type="hidden" name="_captcha" value="true">
+                    <input type="hidden" name="Du_An_Quan_Tam" value="{{ du_an.ten }}">
+
+                    <button type="submit" class="submit-btn">GỬI THÔNG TIN</button>
+                </form>
+            </div>
+        </div>
+    </div>
+        <script>
+        // --- TÍNH NĂNG POPUP TỰ ĐỘNG HIỆN ---
+        var popup = document.getElementById("autoPopup");
+        var hasShown = false; // Biến này để ghi nhớ xem popup đã hiện chưa
+
+        // Sự kiện cuộn chuột
+        window.addEventListener('scroll', function() {
+            var scrollPosition = window.scrollY; // Vị trí chuột hiện tại
+            var documentHeight = document.body.scrollHeight - window.innerHeight; // Tổng chiều cao trang web
+
+            // Nếu khách hàng cuộn qua 30% trang web VÀ popup chưa từng hiện lên
+            if (scrollPosition > documentHeight * 0.05 && !hasShown) {
+                popup.classList.add("show"); // Hiện popup
+                hasShown = true; // Đánh dấu là đã hiện (để không làm phiền khách bật đi bật lại nhiều lần)
+            }
+        });
+
+        // Hàm tắt Popup khi bấm dấu X
+        function closePopup() {
+            popup.classList.remove("show");
+        }
+
+        // Tắt Popup khi khách bấm bừa ra vùng đen bên ngoài form
+        window.onclick = function(event) {
+            if (event.target == popup) {
+                popup.classList.remove("show");
+            }
+        }
+    </script>
+    <div class="live-chat-widget" id="liveChatWidget">
+        <div class="chat-header" onclick="toggleChat()">
+            <span class="chat-title">Hỗ trợ</span>
+            <span class="chat-icon">≡</span>
+        </div>
+
+        <div class="chat-content" id="chatContent">
+            <div class="chat-profile">
+                <img src="{{ url_for('static', filename='images/emtien.jpg') }}" alt="Avatar" class="chat-avatar">
+                <div class="chat-info">
+                    <div class="chat-name"><span class="online-dot"></span> Em Tiến</div>
+                    <div class="chat-role">Chuyên viên tư vấn</div>
+                </div>
+            </div>
+
+            <div class="chat-message-area">
+                <div class="chat-bubble">
+                    Dạ em là Tiến, chuyên viên tư vấn dự án {{ du_an.ten }}. Anh/chị cần hỗ trợ thông tin gì hãy để lại tin nhắn cho em TIến ạ.
+                </div>
+            </div>
+
+            <div class="chat-input-area">
+                <input type="text" id="chatMessageInput" placeholder="Nhập nội dung..." onkeypress="handleChatEnter(event)">
+                <button onclick="sendChatMessage()">Gửi</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        // --- TÍNH NĂNG KHUNG CHAT HỖ TRỢ ---
+        function toggleChat() {
+            var content = document.getElementById("chatContent");
+            // Bật/tắt class 'collapsed' để thu gọn hoặc mở rộng khung chat
+            content.classList.toggle("collapsed");
+        }
+
+        // Bắt sự kiện khi khách bấm phím Enter trong ô nhập tin nhắn
+        function handleChatEnter(event) {
+            if (event.key === "Enter") {
+                sendChatMessage();
+            }
+        }
+
+        // Chuyển hướng khách hàng sang Zalo khi họ bấm Gửi
+        function sendChatMessage() {
+            var input = document.getElementById("chatMessageInput");
+            var message = input.value.trim();
+
+            // Link dẫn thẳng đến Zalo của bạn
+            var zaloLink = "https://zalo.me/0782145432";
+
+            // Mở Zalo sang một tab mới
+            window.open(zaloLink, '_blank');
+
+            // Xóa chữ trong ô nhập sau khi gửi
+            input.value = "";
+        }
+    </script>
+
+</body>
+</html>

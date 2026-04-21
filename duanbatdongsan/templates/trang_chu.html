@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Hệ thống Quản lý Bất Động Sản</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>HỆ THỐNG QUẢN LÝ BẤT ĐỘNG SẢN</h1>
+    <h2>Các dự án đang mở bán nổi bật</h2>
+
+    <div class="project-container">
+        {% for du_an in cac_du_an %}
+            <div class="project-card">
+                <h3>{{ du_an['TenDuAn'] }}</h3>
+                <p><strong>Vị trí:</strong> {{ du_an['ViTri'] }}</p>
+                <p class="price">Giá: {{ du_an['Gia'] }}</p>
+
+                <a href="/du-an/{{ du_an['MaDA'] }}" style="display: block; text-align: center; background: #1a365d; color: white; padding: 10px; text-decoration: none; border-radius: 5px; margin-top: 15px; font-weight: bold;">
+                    Xem chi tiết
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
