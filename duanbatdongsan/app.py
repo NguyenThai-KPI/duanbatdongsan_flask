@@ -109,14 +109,16 @@ def su_ly_dang_ky():
         'Dự Án Quan Tâm': du_an,
     }])
 
-    ten_file = 'khach_hang_VIP.xlsx'
+    file_excel = 'khach_hang_VIP.xlsx'
+    file_csv = 'khach_hang.csv'
 
-    if os.path.exists(ten_file):
-        df_cu = pd.read_excel(ten_file)
+    if os.path.exists(file_excel):
+        df_cu = pd.read_excel(file_excel)
         df_tong = pd.concat([df_cu, du_lieu_moi], ignore_index=True)
     else:
         df_tong = du_lieu_moi
-    df_tong.to_excel(ten_file, index=False)
+    df_tong.to_excel(file_excel, index=False)
+    df_tong.to_csv(file_csv, index=False, encoding='utf-8-sig')
     return render_template('cam_on.html', ten_khach=ho_ten, ten_du_an=du_an)
 
 if __name__ == '__main__':
