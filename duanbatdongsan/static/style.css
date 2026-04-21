@@ -33,6 +33,7 @@ h1, h2 {
     box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Đổ bóng nhẹ */
     border-top: 4px solid #d4af37; /* Viền Vàng Rồng phía trên */
     transition: transform 0.3s ease; /* Hiệu ứng mượt khi di chuột */
+
 }
 
 /* Khi lướt chuột vào thẻ sẽ tự động nổi lên */

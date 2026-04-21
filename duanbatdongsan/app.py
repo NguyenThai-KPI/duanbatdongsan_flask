@@ -83,6 +83,7 @@ thong_tin_chi_tiet = {
     }
 }
 
+
 # 2. Tuyến đường xử lý chung (Chỉ dùng 1 template)
 @app.route('/du-an/<ma_du_an>')
 def chi_tiet_du_an(ma_du_an):
