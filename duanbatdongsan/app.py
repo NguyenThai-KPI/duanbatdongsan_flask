@@ -24,7 +24,7 @@ def chi_tiet_du_an(ma_du_an):
 
     if du_an:
         return render_template('chi_tiet.html', du_an=du_an)
-    return "<h1>Dự án không tồn tại!</h1>", 404
+    return "<h1>Dự Án không tồn tại!</h1>", 404
 
 @app.route('/dang-ky' , methods=['POST'])
 def dang_ky():

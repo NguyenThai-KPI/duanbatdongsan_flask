@@ -9,7 +9,7 @@ thong_tin_chi_tiet = {
         'anh_nen': 'bg-halong.jpg.png',
         # Dữ liệu Tiện ích
         'tien_ich': [
-            {'ten': 'Hồ Bơi ROOFTOP Bốn Mùa', 'mo_ta': 'Trải nghiệm thư giãn sang trọng', 'anh': 'ho-boi.jfif'},
+            {'ten': 'Hồ bơi ROOFTOP Bốn Mùa', 'mo_ta': 'Trải nghiệm thư giãn sang trọng', 'anh': 'ho-boi.jfif'},
             {'ten': 'Elite Fitness Center', 'mo_ta': 'Trang thiết bị tối tân, HLV chuyên nghiệp',
              'anh': 'phong-tap.jfif'},
             {'ten': 'Nhà Hàng Á - Âu', 'mo_ta': 'Tinh hoa ẩm thực đa quốc gia', 'anh': 'amthuc-a-au.jfif'}
