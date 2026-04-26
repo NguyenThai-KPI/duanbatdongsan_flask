@@ -4,7 +4,7 @@ import os
 def luu_du_lieu_dang_ky(ho_ten, du_an, sdt, email):
 
     du_lieu_moi = pd.DataFrame([{
-        'Họ Và tên': ho_ten,
+        'Họ Và Tên': ho_ten,
         'Số Điện Thoại': sdt,
         'Email': email,
         'Dự Án Quan Tâm': du_an,
