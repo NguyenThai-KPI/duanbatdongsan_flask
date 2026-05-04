@@ -14,7 +14,7 @@ app.register_blueprint(admin_bp)
 @app.route('/')
 def trang_chu():
     danh_sach_du_an = []
-    with open('du_an.csv', mode='r', encoding='utf-8') as file:
+    with open('duanbatdongsan/du_an.csv', mode='r', encoding='utf-8') as file:
         doc_file = csv.DictReader(file)
         for dong in doc_file:
             danh_sach_du_an.append(dong)

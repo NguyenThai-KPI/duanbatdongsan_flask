@@ -3,27 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <title>Hệ Thống Quản lý Bất Động Sản</title>
+
+    <!-- Font đẹp hơn -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
-    <h1>HỆ THỐNG QUẢN LÝ BẤT ĐỘNG SẢN</h1>
-    <h2>Các dự án đang mở bán nổi bật</h2>
-    <div style="text-align: center; margin-top: 50px;">
-    <a href="/dang-nhap" style="color: #ccc; text-decoration: none; font-size: 12px;">Khu vực quản trị viên!</a>
-</div>
 
-    <div class="project-container">
-        {% for du_an in cac_du_an %}
-            <div class="project-card">
-                <h3>{{ du_an['TenDuAn'] }}</h3>
-                <p><strong>Vị trí:</strong> {{ du_an['ViTri'] }}</p>
-                <p class="price">Giá: {{ du_an['Gia'] }}</p>
+    <!-- THANH MENU -->
+    <nav class="navbar">
+        <div class="logo">
+            REAL ESTATE
+        </div>
 
-                <a href="/du-an/{{ du_an['MaDA'] }}" style="display: block; text-align: center; background: #1a365d; color: white; padding: 10px; text-decoration: none; border-radius: 5px; margin-top: 15px; font-weight: bold;">
-                    Xem chi tiết
-                </a>
-            </div>
-        {% endfor %}
+        <div class="menu">
+            <a href="#">Trang chủ</a>
+            <a href="#">Dự án</a>
+            <a href="#">Liên hệ</a>
+            <a href="/dang-nhap" class="admin-btn">Admin</a>
+        </div>
+    </nav>
+
+    <!-- PHẦN HEADER -->
+    <header class="hero-section">
+        <div class="overlay"></div>
+
+        <div class="hero-content">
+            <h1>HỆ THỐNG QUẢN LÝ BẤT ĐỘNG SẢN</h1>
+
+            <p>
+                Nơi cập nhật những dự án bất động sản nổi bật,
+                hiện đại và đáng đầu tư nhất hiện nay
+            </p>
+
+            <a href="#duan" class="explore-btn">
+                Khám phá ngay
+            </a>
+        </div>
+    </header>
+
+    <!-- DANH SÁCH DỰ ÁN -->
+    <section id="duan">
+
+        <h2 class="section-title">
+            Các dự án đang mở bán nổi bật
+        </h2>
+
+        <div class="project-container">
+
+            {% for du_an in cac_du_an %}
+                <div class="project-card">
+
+                    <div class="card-top"></div>
+
+                    <h3>{{ du_an['TenDuAn'] }}</h3>
+
+                    <p>
+                        <strong>Vị trí:</strong>
+                        {{ du_an['ViTri'] }}
+                    </p>
+
+                    <p class="price">
+                        {{ du_an['Gia'] }}
+                    </p>
+
+                    <a href="/du-an/{{ du_an['MaDA'] }}" class="detail-btn">
+                        Xem chi tiết
+                    </a>
+
+                </div>
+            {% endfor %}
+
+        </div>
+
+    </section>
+<!-- DỰ ÁN CAO CẤP -->
+<section class="featured-projects">
+
+<!-- TIỆN ÍCH -->
+<section class="service-section">
+
+    <h2 class="section-title">
+        Tiện ích nổi bật
+    </h2>
+
+    <div class="service-container">
+
+        <div class="service-card">
+            <div class="service-icon">🏊</div>
+            <h3>Hồ bơi cao cấp</h3>
+            <p>Khu vực thư giãn hiện đại cho cư dân</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🌳</div>
+            <h3>Công viên xanh</h3>
+            <p>Không gian sống trong lành và yên tĩnh</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🛡️</div>
+            <h3>An ninh 24/7</h3>
+            <p>Hệ thống bảo vệ và camera hiện đại</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🏢</div>
+            <h3>Trung tâm thương mại</h3>
+            <p>Đầy đủ dịch vụ và tiện ích mua sắm</p>
+        </div>
+
     </div>
+
+</section>
+    <h2 class="section-title">
+        Dự án cao cấp nổi bật
+    </h2>
+
+    <div class="featured-container">
+
+        <!-- CARD 1 -->
+        <div class="featured-card">
+
+            <div class="featured-image">
+                <span class="badge">HOT</span>
+
+                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200">
+            </div>
+
+            <div class="featured-content">
+                <h3>Sunshine Riverside</h3>
+
+                <p>
+                    Khu căn hộ cao cấp với không gian xanh,
+                    hồ bơi và trung tâm thương mại hiện đại.
+                </p>
+
+                <div class="featured-price">
+                    Giá từ: 3.5 tỷ
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="featured-card">
+
+            <div class="featured-image">
+                <span class="badge vip">VIP</span>
+
+                <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200">
+            </div>
+
+            <div class="featured-content">
+                <h3>Vinhomes Grand Park</h3>
+
+                <p>
+                    Không gian sống đẳng cấp với hệ thống
+                    tiện ích chuẩn quốc tế.
+                </p>
+
+                <div class="featured-price">
+                    Giá từ: 5 tỷ
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="featured-card">
+
+            <div class="featured-image">
+                <span class="badge">NEW</span>
+
+                <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=1200">
+            </div>
+
+            <div class="featured-content">
+                <h3>Eco Green City</h3>
+
+                <p>
+                    Dự án sinh thái hiện đại phù hợp cho
+                    gia đình trẻ và nhà đầu tư.
+                </p>
+
+                <div class="featured-price">
+                    Giá từ: 2.8 tỷ
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 </body>
 </html>
