@@ -1,64 +1,408 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
-    <title>Hệ Thống Quản lý Bất Động Sản</title>
 
-    <!-- Font đẹp hơn -->
+    <title>
+        Hệ Thống Quản Lý Bất Động Sản
+    </title>
+
+    <!-- FONT -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
-    <!-- THANH MENU -->
+    <!-- ================= NAVBAR ================= -->
+
     <nav class="navbar">
+
         <div class="logo">
             REAL ESTATE
         </div>
 
         <div class="menu">
-            <a href="#">Trang chủ</a>
-            <a href="#">Dự án</a>
-            <a href="#">Liên hệ</a>
-            <a href="/dang-nhap" class="admin-btn">Admin</a>
+
+            <a href="#">
+                Trang chủ
+            </a>
+
+            <a href="#duan">
+                Dự án
+            </a>
+
+            <a href="#">
+                Liên hệ
+            </a>
+
+            <a href="/dang-nhap" class="admin-btn">
+                Admin
+            </a>
+
         </div>
+
     </nav>
 
-    <!-- PHẦN HEADER -->
+    <!-- ================= HERO ================= -->
+
     <header class="hero-section">
-        <div class="overlay"></div>
 
         <div class="hero-content">
-            <h1>HỆ THỐNG QUẢN LÝ BẤT ĐỘNG SẢN</h1>
+
+            <h1>
+                HỆ THỐNG QUẢN LÝ BẤT ĐỘNG SẢN
+            </h1>
 
             <p>
-                Nơi cập nhật những dự án bất động sản nổi bật,
-                hiện đại và đáng đầu tư nhất hiện nay
+                Nơi cập nhật các dự án bất động sản hiện đại,
+                cao cấp và đáng đầu tư nhất hiện nay.
             </p>
 
             <a href="#duan" class="explore-btn">
                 Khám phá ngay
             </a>
+
         </div>
+
     </header>
 
-    <!-- DANH SÁCH DỰ ÁN -->
-    <section id="duan">
+    <!-- ================= STATS ================= -->
+
+    <section class="stats-section">
+
+        <div class="stat-box card">
+            <h2>120+</h2>
+            <p>Dự án</p>
+        </div>
+
+        <div class="stat-box card">
+            <h2>500+</h2>
+            <p>Khách hàng</p>
+        </div>
+
+        <div class="stat-box card">
+            <h2>15+</h2>
+            <p>Tỉnh thành</p>
+        </div>
+
+        <div class="stat-box card">
+            <h2>10+</h2>
+            <p>Năm kinh nghiệm</p>
+        </div>
+
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+
+    <section class="about-section">
+
+        <div class="about-text">
+
+            <h2>
+                Về chúng tôi
+            </h2>
+
+            <p>
+                Chúng tôi cung cấp hệ thống quản lý và giới thiệu
+                các dự án bất động sản uy tín, hiện đại và tiềm năng đầu tư cao.
+            </p>
+
+            <p>
+                Với dữ liệu minh bạch và đội ngũ chuyên nghiệp,
+                khách hàng có thể dễ dàng tìm kiếm dự án phù hợp.
+            </p>
+
+        </div>
+
+        <div class="about-image">
+
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200">
+
+        </div>
+
+    </section>
+    <!-- ================= FEATURED ================= -->
+
+    <section class="featured-projects">
 
         <h2 class="section-title">
-            Các dự án đang mở bán nổi bật
+            Dự án cao cấp nổi bật
         </h2>
+
+        <div class="featured-container">
+
+            <!-- CARD 1 -->
+
+            <div class="featured-card card">
+
+                <div class="featured-image">
+
+                    <span class="badge">
+                        HOT
+                    </span>
+
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200">
+
+                </div>
+
+                <div class="featured-content">
+
+                    <h3>
+                        Sunshine Riverside
+                    </h3>
+
+                    <p>
+                        Khu căn hộ cao cấp với hồ bơi,
+                        trung tâm thương mại và không gian xanh.
+                    </p>
+
+                    <div class="featured-price">
+                        Giá từ: 3.5 tỷ
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 2 -->
+
+            <div class="featured-card card">
+
+                <div class="featured-image">
+
+                    <span class="badge vip">
+                        VIP
+                    </span>
+
+                    <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200">
+
+                </div>
+
+                <div class="featured-content">
+
+                    <h3>
+                        Vinhomes Grand Park
+                    </h3>
+
+                    <p>
+                        Không gian sống hiện đại với
+                        hệ thống tiện ích chuẩn quốc tế.
+                    </p>
+
+                    <div class="featured-price">
+                        Giá từ: 5 tỷ
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 3 -->
+
+            <div class="featured-card card">
+
+                <div class="featured-image">
+
+                    <span class="badge">
+                        NEW
+                    </span>
+
+                    <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=1200">
+
+                </div>
+
+                <div class="featured-content">
+
+                    <h3>
+                        Eco Green City
+                    </h3>
+
+                    <p>
+                        Dự án sinh thái hiện đại phù hợp
+                        cho gia đình trẻ và nhà đầu tư.
+                    </p>
+
+                    <div class="featured-price">
+                        Giá từ: 2.8 tỷ
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= SERVICES ================= -->
+
+    <section class="service-section">
+
+        <h2 class="section-title">
+            Tiện ích nổi bật
+        </h2>
+
+        <div class="service-container">
+
+            <!-- CARD -->
+
+            <div class="service-card card">
+
+                <div class="service-image">
+
+                    <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?q=80&w=1200">
+
+                </div>
+
+                <div class="service-content">
+
+                    <h3>
+                        Hồ bơi cao cấp
+                    </h3>
+
+                    <p>
+                        Không gian thư giãn hiện đại cho cư dân.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- CARD -->
+
+            <div class="service-card card">
+
+                <div class="service-image">
+
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200">
+
+                </div>
+
+                <div class="service-content">
+
+                    <h3>
+                        Công viên xanh
+                    </h3>
+
+                    <p>
+                        Không gian sống trong lành và yên tĩnh.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- CARD -->
+
+            <div class="service-card card">
+
+                <div class="service-image">
+
+                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1200">
+
+                </div>
+
+                <div class="service-content">
+
+                    <h3>
+                        An ninh 24/7
+                    </h3>
+
+                    <p>
+                        Camera và bảo vệ hoạt động liên tục.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- CARD -->
+
+            <div class="service-card card">
+
+                <div class="service-image">
+
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200">
+
+                </div>
+
+                <div class="service-content">
+
+                    <h3>
+                        Trung tâm thương mại
+                    </h3>
+
+                    <p>
+                        Đầy đủ tiện ích mua sắm và giải trí.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= PROJECT ================= -->
+
+    <section id="duan" class="main-project-section">
+
+        <div class="project-header">
+
+            <span class="project-tag">
+                HOT PROJECT
+            </span>
+
+            <h2 class="section-title">
+                Các dự án đang mở bán nổi bật
+            </h2>
+
+            <div class="title-line"></div>
+
+        </div>
 
         <div class="project-container">
 
             {% for du_an in cac_du_an %}
-                <div class="project-card">
 
-                    <div class="card-top"></div>
+            <div class="project-card card">
 
-                    <h3>{{ du_an['TenDuAn'] }}</h3>
+                <div class="project-badge">
+                    MỞ BÁN
+                </div>
+
+                <!-- ẢNH -->
+
+                <div class="project-image">
+
+                    {% if du_an['MaDA'] == 1 %}
+
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200">
+
+                    {% elif du_an['MaDA'] == 2 %}
+
+                    <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200">
+
+                    {% else %}
+
+                    <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=1200">
+
+                    {% endif %}
+
+                </div>
+
+                <!-- CONTENT -->
+
+                <div class="featured-content">
+
+                    <h3>
+                        {{ du_an['TenDuAn'] }}
+                    </h3>
 
                     <p>
                         <strong>Vị trí:</strong>
@@ -74,130 +418,43 @@
                     </a>
 
                 </div>
+
+            </div>
+
             {% endfor %}
 
         </div>
 
     </section>
-<!-- DỰ ÁN CAO CẤP -->
-<section class="featured-projects">
 
-<!-- TIỆN ÍCH -->
-<section class="service-section">
+    <!-- ================= FOOTER ================= -->
 
-    <h2 class="section-title">
-        Tiện ích nổi bật
-    </h2>
+    <footer class="footer">
 
-    <div class="service-container">
+        <h3>
+            HỆ THỐNG QUẢN LÝ BẤT ĐỘNG SẢN
+        </h3>
 
-        <div class="service-card">
-            <div class="service-icon">🏊</div>
-            <h3>Hồ bơi cao cấp</h3>
-            <p>Khu vực thư giãn hiện đại cho cư dân</p>
-        </div>
+        <p>
+            Email: thainguyen@gmail.com
+        </p>
 
-        <div class="service-card">
-            <div class="service-icon">🌳</div>
-            <h3>Công viên xanh</h3>
-            <p>Không gian sống trong lành và yên tĩnh</p>
-        </div>
+        <p>
+            Hotline: 0123 456 789
+        </p>
 
-        <div class="service-card">
-            <div class="service-icon">🛡️</div>
-            <h3>An ninh 24/7</h3>
-            <p>Hệ thống bảo vệ và camera hiện đại</p>
-        </div>
+        <p>
+            Địa chỉ: Quảng Ninh,Việt Nam
+        </p>
 
-        <div class="service-card">
-            <div class="service-icon">🏢</div>
-            <h3>Trung tâm thương mại</h3>
-            <p>Đầy đủ dịch vụ và tiện ích mua sắm</p>
-        </div>
+        <div class="footer-line"></div>
 
-    </div>
+        <p>
+            © 2026 Real Estate System
+        </p>
 
-</section>
-    <h2 class="section-title">
-        Dự án cao cấp nổi bật
-    </h2>
+    </footer>
 
-    <div class="featured-container">
-
-        <!-- CARD 1 -->
-        <div class="featured-card">
-
-            <div class="featured-image">
-                <span class="badge">HOT</span>
-
-                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200">
-            </div>
-
-            <div class="featured-content">
-                <h3>Sunshine Riverside</h3>
-
-                <p>
-                    Khu căn hộ cao cấp với không gian xanh,
-                    hồ bơi và trung tâm thương mại hiện đại.
-                </p>
-
-                <div class="featured-price">
-                    Giá từ: 3.5 tỷ
-                </div>
-            </div>
-
-        </div>
-
-        <!-- CARD 2 -->
-        <div class="featured-card">
-
-            <div class="featured-image">
-                <span class="badge vip">VIP</span>
-
-                <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200">
-            </div>
-
-            <div class="featured-content">
-                <h3>Vinhomes Grand Park</h3>
-
-                <p>
-                    Không gian sống đẳng cấp với hệ thống
-                    tiện ích chuẩn quốc tế.
-                </p>
-
-                <div class="featured-price">
-                    Giá từ: 5 tỷ
-                </div>
-            </div>
-
-        </div>
-
-        <!-- CARD 3 -->
-        <div class="featured-card">
-
-            <div class="featured-image">
-                <span class="badge">NEW</span>
-
-                <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=1200">
-            </div>
-
-            <div class="featured-content">
-                <h3>Eco Green City</h3>
-
-                <p>
-                    Dự án sinh thái hiện đại phù hợp cho
-                    gia đình trẻ và nhà đầu tư.
-                </p>
-
-                <div class="featured-price">
-                    Giá từ: 2.8 tỷ
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
 </body>
+
 </html>
