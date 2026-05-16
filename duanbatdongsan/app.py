@@ -4,20 +4,29 @@ import csv
 from thong_tin_chi_tiet import thong_tin_chi_tiet
 from xu_ly_khach_hang import luu_du_lieu_dang_ky
 
-from admin import admin_bp
-
 app = Flask(__name__)
 app.secret_key = 'batdongsan_bi_mat'
 
-app.register_blueprint(admin_bp)
 
 @app.route('/')
 def trang_chu():
     danh_sach_du_an = []
-    with open('duanbatdongsan/du_an.csv', mode='r', encoding='utf-8') as file:
-        doc_file = csv.DictReader(file)
-        for dong in doc_file:
-            danh_sach_du_an.append(dong)
+    # ĐÃ ĐỔI ĐƯỜNG DẪN ĐỌC FILE VỀ DATABASE/SANPHAM.CSV
+    try:
+        with open('database/sanpham.csv', mode='r', encoding='utf-8') as file:
+            doc_file = csv.reader(file)
+            # Vì Tkinter lưu CSV không có header (dòng tiêu đề), ta phải đọc bằng index
+            for row in doc_file:
+                if len(row) >= 5:
+                    danh_sach_du_an.append({
+                        'MaDA': row[0],
+                        'TenDuAn': row[1],
+                        'Gia': row[2],
+                        'SoLuong': row[3],
+                        'ViTri': row[4]
+                    })
+    except FileNotFoundError:
+        pass # Nếu chưa có file thì bỏ qua không báo lỗi
 
     return render_template('trang_chu.html', cac_du_an=danh_sach_du_an)
 
@@ -37,11 +46,6 @@ def dang_ky():
 
     luu_du_lieu_dang_ky(ho_ten, sdt, email, du_an)
     return render_template('cam_on.html', ten_khach=ho_ten, ten_du_an=du_an)
-@app.route('/trang_quan_tri)')
-def trang_quan_tri():
-    if 'admin_da_dang_nhap' not in session:
-        return redirect(url_for('admin.dang_nhap'))
-    return render_template('quan_tri.html', admin_name="Sếp")
 
 if __name__ == '__main__':
     app.run(debug=True)
